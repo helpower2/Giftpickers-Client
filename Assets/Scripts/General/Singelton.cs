@@ -38,25 +38,21 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                             Debug.LogError("Deleting " + instances[i].gameObject.name);
                             Destroy(instances[i].gameObject);
                         }
+                    }else if (instances.Length == 0)
+                    {
+                        GameObject singleton = new GameObject();
+                        _instance = singleton.AddComponent<T>();
+                        singleton.name = "[Singleton] " + typeof(T).ToString();
 
-                        _instance = FindObjectOfType<T>();
+                        DontDestroyOnLoad(singleton);
+                        
+                        Debug.Log(
+                            $"[Singleton] An instance of {typeof(T)} " +
+                            $"is needed in the scene, so ' {singleton}" +
+                            "' was created with DontDestroyOnLoad.");
                     }
-
-                    if (instances.Length > 0)
-                        _instance = instances[0];
-
-                    GameObject singleton = new GameObject();
-                    _instance = singleton.AddComponent<T>();
-                    singleton.name = "[Singleton] " + typeof(T).ToString();
-
-                    DontDestroyOnLoad(singleton);
-
-                    Debug.Log(
-                        $"[Singleton] An instance of {typeof(T)} " +
-                        $"is needed in the scene, so ' {singleton}" +
-                        "' was created with DontDestroyOnLoad.");
+                    _instance = FindObjectOfType<T>();
                 }
-
                 return _instance;
             }
         }
