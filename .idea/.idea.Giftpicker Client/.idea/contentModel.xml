@@ -9,6 +9,10 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="General" t="Include">
+            <e p="Editor" t="Include">
+              <e p="GenericDictionaryPropertyDrawer.cs" t="Include" />
+            </e>
+            <e p="GenericDictionary.cs" t="Include" />
             <e p="Singelton.cs" t="Include" />
           </e>
           <e p="Multiplayer" t="Include">
@@ -17,6 +21,7 @@
             <e p="ClientHandle.cs" t="Include" />
             <e p="ClientSend.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
+            <e p="NetworkTransform.cs" t="Include" />
             <e p="Packet.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerManager.cs" t="Include" />

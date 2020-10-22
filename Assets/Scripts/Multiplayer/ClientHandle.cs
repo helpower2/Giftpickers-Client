@@ -41,4 +41,26 @@ public class ClientHandle : MonoBehaviour
 
         GameManager.players[_id].transform.rotation = _rotation;
     }
+
+    public static void ObjectTransform(Packet _packet)
+    {
+        var _id = _packet.ReadInt();
+        var _position = _packet.ReadVector3();
+        var _rotation = _packet.ReadQuaternion();
+        var _scale = _packet.ReadVector3();
+        
+        GameManager.networkTransforms[_id].ReciveTransform(_position, _rotation, _scale);
+    }
+
+    public static void SpawnPrefab(Packet _packet)
+    {
+        var _prefabId = _packet.ReadInt();
+        var _networkId = _packet.ReadInt();
+        var _position = _packet.ReadVector3();
+        var _rotation = _packet.ReadQuaternion();
+        var _scale = _packet.ReadVector3();
+        
+        GameManager.Instance.SpawnPrefab(_prefabId, _networkId , _position, _rotation, _scale);
+    }
+    
 }

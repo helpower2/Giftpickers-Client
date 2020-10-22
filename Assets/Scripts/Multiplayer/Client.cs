@@ -45,7 +45,9 @@ public class Client : Singleton<Client>
             {(int) ServerPackets.welcome, ClientHandle.Welcome},
             {(int) ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer},
             {(int) ServerPackets.playerPosition, ClientHandle.PlayerPosition},
-            {(int) ServerPackets.playerRotation, ClientHandle.PlayerRotation}
+            {(int) ServerPackets.playerRotation, ClientHandle.PlayerRotation},
+            {(int) ServerPackets.ObjectTransform, ClientHandle.ObjectTransform},
+            {(int) ServerPackets.SpawnPrefab, ClientHandle.SpawnPrefab}
         };
         Debug.Log("Initialized packets.");
     }

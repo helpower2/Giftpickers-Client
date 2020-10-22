@@ -7,9 +7,11 @@ using UnityEngine;
 public enum ServerPackets
 {
     welcome = 1,
-    spawnPlayer,
-    playerPosition,
-    playerRotation
+    spawnPlayer = 2,
+    playerPosition = 3,
+    playerRotation = 4,
+    ObjectTransform = 5,
+    SpawnPrefab = 6
 }
 
 /// <summary>Sent from client to server.</summary>

@@ -415,7 +415,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.1
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -442,7 +442,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1315,6 +1315,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localPlayerPrefab: {fileID: 7780537433341026229, guid: 439ee041fb7d353459f56c0a27ee2f15, type: 3}
   playerPrefab: {fileID: 7780537433341026229, guid: 28356974c7337f046a4d87eaf2777d62, type: 3}
+  networkPrefabs:
+    list:
+    - Key: 0
+      Value: {fileID: 8368773054728866845, guid: d94ce7ed798f31545a707f0c200fe155, type: 3}
+    - Key: 1
+      Value: {fileID: 3853266097690029174, guid: ac5d882769b9a9d46b8ba03023fcd45d, type: 3}
+    keyCollision: 0
 --- !u!4 &1843332724
 Transform:
   m_ObjectHideFlags: 0
