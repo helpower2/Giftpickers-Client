@@ -23,7 +23,7 @@ public class ClientSend : MonoBehaviour
     /// <summary>Lets the server know that the welcome message was received.</summary>
     public static void WelcomeReceived()
     {
-        using (var _packet = new Packet((int) ClientPackets.welcomeReceived))
+        using (var _packet = new Packet((int) ClientPackets.WelcomeReceived))
         {
             _packet.Write(Client.Instance.myId);
             _packet.Write(UIManager.Instance.usernameField.text);
@@ -36,13 +36,23 @@ public class ClientSend : MonoBehaviour
     /// <param name="_inputs"></param>
     public static void PlayerMovement(bool[] _inputs)
     {
-        using (var _packet = new Packet((int) ClientPackets.playerMovement))
+        using (var _packet = new Packet((int) ClientPackets.PlayerMovement))
         {
             _packet.Write(_inputs.Length);
             foreach (var _input in _inputs) _packet.Write(_input);
             _packet.Write(GameManager.players[Client.Instance.myId].transform.rotation);
 
             SendUDPData(_packet);
+        }
+    }
+
+    public static void SendChatMassage(string massage)
+    {
+        using (var _packet = new Packet((int) ClientPackets.ChatMassage))
+        {
+            _packet.Write(massage);
+            
+            SendTCPData(_packet);
         }
     }
 

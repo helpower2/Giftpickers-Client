@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class ClientHandle : MonoBehaviour
@@ -62,5 +63,11 @@ public class ClientHandle : MonoBehaviour
         
         GameManager.Instance.SpawnPrefab(_prefabId, _networkId , _position, _rotation, _scale);
     }
-    
+
+    public static void ChatMassage(Packet _packet)
+    {
+        var _massage = _packet.ReadString();
+        
+        NetworkChat.Instance.ReciveMassage(_massage);
+    }
 }

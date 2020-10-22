@@ -42,12 +42,13 @@ public class Client : Singleton<Client>
     {
         packetHandlers = new Dictionary<int, PacketHandler>
         {
-            {(int) ServerPackets.welcome, ClientHandle.Welcome},
-            {(int) ServerPackets.spawnPlayer, ClientHandle.SpawnPlayer},
-            {(int) ServerPackets.playerPosition, ClientHandle.PlayerPosition},
-            {(int) ServerPackets.playerRotation, ClientHandle.PlayerRotation},
+            {(int) ServerPackets.Welcome, ClientHandle.Welcome},
+            {(int) ServerPackets.SpawnPlayer, ClientHandle.SpawnPlayer},
+            {(int) ServerPackets.PlayerPosition, ClientHandle.PlayerPosition},
+            {(int) ServerPackets.PlayerRotation, ClientHandle.PlayerRotation},
             {(int) ServerPackets.ObjectTransform, ClientHandle.ObjectTransform},
-            {(int) ServerPackets.SpawnPrefab, ClientHandle.SpawnPrefab}
+            {(int) ServerPackets.SpawnPrefab, ClientHandle.SpawnPrefab},
+            {(int) ServerPackets.ChatMassage, ClientHandle.ChatMassage}
         };
         Debug.Log("Initialized packets.");
     }
